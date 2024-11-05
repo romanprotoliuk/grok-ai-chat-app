@@ -4,6 +4,7 @@
   <h3>A minimal boilerplate for Grok-Beta XAI integration with Next.js</h3>
   <p>Features X/Twitter OAuth2.0 authentication and API integration</p>
 </div>
+<img width="1720" alt="Screenshot 2024-11-04 at 5 33 32 PM" src="https://github.com/user-attachments/assets/08f8a148-0542-47bd-879b-984e9f7e77f0">
 
 ## 🤖 About
 
@@ -57,7 +58,21 @@ npm run dev
 
 ## 📁 Project Structure
 
-...
+├── src/                      # Source code directory
+│   ├── app/                  # Main application files
+│   │   ├── api/              # API routes
+│   │   │   └── auth/         # Authentication API route
+│   │   ├── layout.tsx        # Application layout component
+│   │   ├── page.tsx          # Main page component
+│   │   └── providers.tsx     # Context and provider setups
+│   ├── components/           # UI components
+│   │   └── forms/            # Form components like chat-form
+│   ├── context/              # Context providers (e.g., Chat context)
+│   ├── hooks/                # Custom React hooks
+│   ├── styles/               # Styling files (e.g., global styles)
+│   ├── utils/                # Utility functions (e.g., Axios instance)
+│   └── middleware.ts         # Middleware for handling requests
+├── .env.local  
 
 ## 🔗 Resources
 
