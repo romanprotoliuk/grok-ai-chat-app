@@ -1,99 +1,66 @@
-# Chat AI with Grok-Beta XAI [WIP]
+# Next.js Grok-Beta XAI Boilerplate
 
 <div align="left">
-  <h3>A minimal AI chat interface powered by Grok-Beta XAI</h3>
-  <p>Built with Next.js 15, TypeScript, and Tailwind CSS</p>
+  <h3>A minimal boilerplate for Grok-Beta XAI integration with Next.js</h3>
+  <p>Features X/Twitter OAuth2.0 authentication and API integration</p>
 </div>
 
 ## 🤖 About
 
-An experimental chat interface that leverages Grok-Beta XAI capabilities. Built with a focus on simplicity, performance, and developer experience. Experimenting with enhancing UX and user personalization across health data for AI chats.
+A starter template for building applications with Grok-Beta XAI. Includes authentication setup with X/Twitter OAuth2.0 and basic API integration patterns.
 
-## 🎯 Vision
+## ✨ Features
 
-- 🏥 **Health Data Integration** - Personalized AI interactions based on user health profiles
-- 🔐 **Privacy-First** - Secure handling of sensitive health information
-- 🤝 **User-Centric** - Tailored responses based on individual health contexts
-- 📊 **Data Visualization** - Clear presentation of health insights
-- 🧠 **Contextual Understanding** - AI responses informed by user's health background
-
-## ✨ Core Features
-
-- 🧠 **Grok-Beta Integration** - Experimental AI model with advanced capabilities
-- 🎯 **Minimal Design** - Clean, distraction-free interface
-- 🔒 **X Auth** - Secure authentication with X (Twitter) OAuth 2.0
-- 💾 **Local Storage** - Persistent chat history for authenticated users
-- ⚡ **Real-time Chat** - Instant responses with typing indicators
-- 🎨 **Code Highlighting** - Beautiful syntax highlighting with copy functionality
-- 📝 **Markdown Support** - Rich text formatting in responses
-
-## 🧪 Experimental Features
-
-- **Health Profile Integration**: Testing personalized health data integration
-- **Context-Aware Responses**: Exploring health-conscious AI interactions
-- **Privacy Controls**: Developing granular health data sharing options
-- **Grok Integration**: Testing new AI capabilities
-- **Local Storage**: Experimenting with client-side persistence
-- **Real-time Updates**: Exploring WebSocket integration
+- 🧠 **Grok-Beta XAI Integration** - Ready-to-use API setup
+- 🔒 **X Auth** - Preconfigured X/Twitter OAuth 2.0 with NextAuth.js
+- ⚡ **API Routes** - Structured API endpoints for Grok-Beta
+- 🎯 **TypeScript** - Full type safety and modern development experience
+- 📝 **Examples** - Basic implementation patterns and usage samples
 
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 15
-- **Auth**: NextAuth.js with X OAuth 2.0
-- **Styling**: Tailwind CSS
+- **Authentication**: NextAuth.js
+- **API Integration**: Grok-Beta XAI
 - **Language**: TypeScript
-- **AI**: Grok-Beta XAI
 
 ## 🚀 Getting Started
 
 1. Clone and install:
 
 ```bash
-git clone https://github.com/yourusername/chat-ai.git
-cd chat-ai
+git clone https://github.com/yourusername/grok-beta-boilerplate.git
+cd grok-beta-boilerplate
 npm install
 ```
 
-2. Configure environment:
+2. Configure environment variables:
 
 ```env
+# Auth Configuration
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your-secret
+NEXTAUTH_SECRET=your-secret-key
+
+# X/Twitter OAuth
 TWITTER_CLIENT_ID=your-x-client-id
 TWITTER_CLIENT_SECRET=your-x-client-secret
+
+# Grok-Beta API
+GROK_API_KEY=your-grok-beta-api-key
 ```
 
-3. Run development server:
+3. Start development:
 
 ```bash
 npm run dev
 ```
 
-## 📸 Preview
-<img width="1209" alt="Screenshot 2024-11-03 at 7 36 34 PM" src="https://github.com/user-attachments/assets/50550bac-5916-4fab-ad06-1d8a14d12cb9">
+## 📁 Project Structure
 
+...
 
-## 🤝 Contributing
+## 🔗 Resources
 
-Contributions welcome! This is an experimental project - feel free to hack away.
-
-1. Fork it
-2. Create your feature branch (`git checkout -b feature/cool-feature`)
-3. Commit changes (`git commit -am 'Add cool feature'`)
-4. Push (`git push origin feature/cool-feature`)
-5. Open a PR
-
-## 📝 License
-
-MIT License - hack and share!
-
-## 🙏 Credits
-
-- [Next.js](https://nextjs.org/)
-- [X Developer Platform](https://developer.twitter.com/)
-- [Grok-Beta](https://grok.x.ai/)
-
-## 🔗 Links
-
-- GitHub: [romanprotoliuk](https://github.com/romanprotoliuk)
-- X: [@romanprotoliuk](https://twitter.com/romanprotoliuk)
+- [Grok-Beta Documentation](https://grok.x.ai/docs)
+- [NextAuth.js Guide](https://next-auth.js.org/)
+- [X OAuth Documentation](https://developer.twitter.com/en/docs/authentication/oauth-2-0)
