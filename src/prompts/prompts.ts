@@ -1,6 +1,4 @@
-import { PromptType } from '@/types/health';
-
-export const prompts: PromptType[] = [
+export const prompts = [
   {
     title: 'Draft email',
     description: 'Generate email for any occasion you need.',

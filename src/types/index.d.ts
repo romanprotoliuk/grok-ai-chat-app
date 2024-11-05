@@ -1,5 +1,3 @@
-import { LucideIcon } from 'lucide-react';
-
 export type MessageRole = "user" | "ai" | "system";
 
 export type Message = {
@@ -29,13 +27,11 @@ export interface ChatContextType {
   sessionStatus: 'loading' | 'authenticated' | 'unauthenticated';
 }
 
-// Code block types
 export type CodeBlockProps = {
   code: string;
   language?: string;
 };
 
-// API response types
 export type APIResponse = {
   message?: {
     content: string;

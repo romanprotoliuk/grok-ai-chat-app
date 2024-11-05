@@ -5,11 +5,7 @@ import { useEffect, useRef } from 'react';
 import { marked } from 'marked';
 import CodeBlock from '../layout/code-block';
 import PromptGrid from '@/components/layout/prompt-grid';
-import { MessageRole } from '@/types';
-import { useHealth } from '@/context/health-context';
-import { PromptType } from '@/types/health';
 
-// Helper function to detect and parse code blocks
 const parseMessage = (content: string) => {
   const codeBlockRegex = /```(\w+)?\n([\s\S]*?)```/g;
   const parts = [];
@@ -47,9 +43,8 @@ const parseMessage = (content: string) => {
 };
 
 export default function ChatMessages() {
-  const { chats, activeChat, isLoading, addMessage, createNewChat } = useChatContext();
+  const { chats, activeChat, isLoading, addMessage } = useChatContext();
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const { healthProfile } = useHealth();
 
   const currentChat = chats.find(chat => chat.id === activeChat);
   const messages = currentChat?.messages || [];
@@ -60,32 +55,9 @@ export default function ChatMessages() {
     }
   }, [messages.length]);
 
-  const formatHealthData = () => {
-    if (!healthProfile) return '';
 
-    const metrics = healthProfile.metrics.map(metric => ({
-      type: metric.type,
-      value: metric.value,
-      unit: metric.unit,
-      date: new Date(metric.timestamp).toISOString().split('T')[0],
-      notes: metric.notes
-    }));
-
-    return JSON.stringify(metrics, null, 2);
-  };
-
-  const handlePromptSelect = async (prompt: PromptType) => {
-    if (prompt.requiresData && !healthProfile) {
-      // Show health data form
-      setShowHealthForm(true);
-      return;
-    }
-
-    let message = prompt.promptMessage;
-    if (prompt.category === 'health') {
-      message += `\n\nMy health data:\n\`\`\`json\n${formatHealthData()}\n\`\`\``;
-    }
-
+  const handlePromptSelect = async (prompt: string) => {
+    const message = prompt;
     await addMessage(message, 'user');
   };
 
@@ -95,11 +67,11 @@ export default function ChatMessages() {
       <div className="h-full flex flex-col">
         <div className="flex-1 flex items-center justify-center">
           {!activeChat || !currentChat ? (
-            <PromptGrid onPromptSelect={(prompt: string) => handlePromptSelect(prompt as unknown as PromptType)} />
+            <PromptGrid onPromptSelect={(prompt: string) => handlePromptSelect(prompt)} />
           ) : (
             <div className="text-center">
               <h2 className="text-2xl font-semibold mb-4">Start a New Chat</h2>
-              <PromptGrid onPromptSelect={(prompt: string) => handlePromptSelect(prompt as unknown as PromptType)} />
+              <PromptGrid onPromptSelect={(prompt: string) => handlePromptSelect(prompt)} />
             </div>
           )}
         </div>
@@ -153,8 +125,4 @@ export default function ChatMessages() {
       <div ref={messagesEndRef} />
     </div>
   );
-}
-
-function setShowHealthForm(arg0: boolean) {
-    throw new Error('Function not implemented.');
 }

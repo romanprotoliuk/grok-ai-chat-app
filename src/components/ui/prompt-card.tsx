@@ -1,8 +1,12 @@
-import { PromptType } from '@/types/health';
+type Prompt = {
+  title: string;
+  description: string;
+  promptMessage: string;
+}
 
 interface PromptCardProps {
-  prompt: PromptType;
-  onClick: (promptMessage: string) => void;
+  prompt: Prompt;
+  onClick: (prompt: string) => void;
 }
 
 export default function PromptCard({ prompt, onClick }: PromptCardProps) {
