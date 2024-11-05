@@ -57,7 +57,7 @@ npm run dev
 ```
 
 ## 📁 Project Structure
-
+```
 ├── src/                      # Source code directory
 │   ├── app/                  # Main application files
 │   │   ├── api/              # API routes
@@ -73,7 +73,7 @@ npm run dev
 │   ├── utils/                # Utility functions (e.g., Axios instance)
 │   └── middleware.ts         # Middleware for handling requests
 ├── .env.local  
-
+```
 ## 🔗 Resources
 
 - [Grok-Beta Documentation](https://grok.x.ai/docs)
